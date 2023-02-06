@@ -7,19 +7,17 @@ public class Lv0_05_SequenceNumbers {
     public static int solution(int[] common) {
         int answer = 0;
         
-        for(int i=0; i<common.length; i++) {
-        	if(i == common.length-1) {
-        		if(common[i] - common[i-1] == common[i-1] - common[i-2]) {
-        			answer = common[i] + (common[i] - common[i-1]); 
-        		}else {
-        			int a = common[i]-common[i-1]; 
-        			int b = common[i-1] - common[i-2];
-        			int val = a / b;
-        			
-        			answer = common[i] * val;
-        		}
-        	}
-        }
+        int stdIdx = common.length-1;
+        
+		if(common[stdIdx] - common[stdIdx-1] == common[stdIdx-1] - common[stdIdx-2]) {
+			answer = common[stdIdx] + (common[stdIdx] - common[stdIdx-1]); 
+		}else {
+			int a = common[stdIdx]-common[stdIdx-1]; 
+			int b = common[stdIdx-1] - common[stdIdx-2];
+			int val = a / b;
+			
+			answer = common[stdIdx] * val;
+		}
         
         return answer;
     }
@@ -27,8 +25,8 @@ public class Lv0_05_SequenceNumbers {
     public static void main(String[] args) {
     	
 //    	System.out.println(solution(new int[]{2,4,6,8,10, 12}));
-//    	System.out.println(solution(new int[] {2,4,8,16,32})); // 2, 4, 8
-    	System.out.println(solution(new int[] {3,9})); // 2, 4, 8
+    	System.out.println(solution(new int[] {2,4,8,16,32})); // 2, 4, 8
+//    	System.out.println(solution(new int[] {3,9})); // 2, 4, 8
     }
 	
 
