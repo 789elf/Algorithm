@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv0;
 
 public class Lv0_03_CheckNumbers {
     public static int solution(int num1, int num2) {
