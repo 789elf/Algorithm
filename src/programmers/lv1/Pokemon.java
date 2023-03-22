@@ -15,7 +15,7 @@ public class Pokemon {
 //    	System.out.println(Arrays.toString(distArr));
         
         
-        return distArr.length > nums.length ? nums.length : distArr.length;
+        return distArr.length > nums.length/2 ? nums.length/2 : distArr.length;
     }
     
     public static void main(String[] args) {
